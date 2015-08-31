@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:context="http://www.springframework.org/schema/context"
+  xsi:schemaLocation="
+	http://www.springframework.org/schema/beans
+	http://www.springframework.org/schema/beans/spring-beans.xsd
+	http://www.springframework.org/schema/context
+	http://www.springframework.org/schema/context/spring-context.xsd">
+
+  <!-- elasticsearch 集群配置 -->
+  <bean class="com.hd123.jcrm.search.config.ElasticSearchClusterConfig">
+    <property name="enableCluster"
+      value="${jcrm-elasticSearch-clusterConfig.enableCluster:false}" />
+    <property name="clusterName"
+      value="${jcrm-elasticSearch-clusterConfig.clusterName:elasticsearch}" />
+    <property name="clusterNodeIp"
+      value="${jcrm-elasticSearch-clusterConfig.clusterNodeIp:127.0.0.1}" />
+    <property name="clusterNodePort"
+      value="${jcrm-elasticSearch-clusterConfig.clusterNodePort:9300}" />
+  </bean>
+</beans>
